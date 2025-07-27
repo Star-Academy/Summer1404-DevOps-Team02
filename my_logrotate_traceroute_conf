@@ -1,0 +1,13 @@
+/var/log/my_traceroute.log {
+	daily
+	compress
+	missingok
+	dateext
+	rotate 4
+	su root root
+	create 0644 root root
+	postrotate
+		uptime >> /var/log/my_traceroute.uptime.log
+	endscript
+	size 100M
+}
